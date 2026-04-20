@@ -1,35 +1,147 @@
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+}
+
+/* BODY */
 body {
-    font-family: Arial;
-    background-color: #0f172a;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
     color: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    /* 🔥 en lugar de height */
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 20px;
 }
 
+/* CONTENEDOR */
 .contenedor {
     background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    padding: 25px;
+    border-radius: 14px;
+
+    width: 100%;
+    max-width: 380px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+/* TITULO */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* LABELS */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #cbd5f5;
+}
+
+/* INPUTS */
 input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    font-size: 14px;
 }
 
+/* BOTÓN */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #22c55e;
+    padding: 12px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
     border: none;
+    border-radius: 8px;
     color: white;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
-    background-color: #16a34a;
+    transform: scale(1.03);
+}
+
+/* RESULTADOS */
+h2 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* 📱 TABLET */
+@media (max-width: 768px) {
+
+    .contenedor {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input {
+        font-size: 15px;
+        padding: 11px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+/* 📱 CELULAR */
+@media (max-width: 480px) {
+
+    body {
+        align-items: flex-start; /* evita corte arriba */
+        padding-top: 30px;
+    }
+
+    .contenedor {
+        max-width: 100%;
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
 }
