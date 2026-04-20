@@ -1,0 +1,42 @@
+const VENTA_BASE = 5;
+
+function calcularComision(numeroVentas,precioProducto){
+    let comision = 0;
+
+    if(numeroVentas > VENTA_BASE){
+        let ventasExtra = numeroVentas - VENTA_BASE;
+        comision = ventasExtra * (precioProducto * 0.10);
+    }
+
+    return comision;
+}
+
+function calcular(){
+
+    //recuperamos propiedades de las cajas de texto 
+    let componenteSueldoBase=document.getElementById("txtSueldoBase");
+    let componenteVentas=document.getElementById("txtVentas");
+    let componentePrecio=document.getElementById("txtPrecio");
+
+    //recuperamos el valor de las caja de texto 
+    let sueldoBaseStr=componenteSueldoBase.value;
+    let numeroVentasStr=componenteVentas.value;
+    let precioProductosStr=componentePrecio.value;
+
+    //convertimos el texto a numero 
+    let sueldoBase=parseFloat(sueldoBaseStr);
+    let numeroVentas=parseFloat(numeroVentasStr);
+    let precioProducto=parseFloat(precioProductosStr);
+
+    let comision = calcularComision(numeroVentas,precioProducto);
+
+    let total = sueldoBase + comision;
+
+    let spSueldoBase=document.getElementById("spSueldoBase");
+    let spComision=document.getElementById("spComision");
+    let spTotal=document.getElementById("spTotal")
+
+    spSueldoBase.textContent = sueldoBase;
+    spComision.textContent = comision;
+    spTotal.textContent = total;
+}
